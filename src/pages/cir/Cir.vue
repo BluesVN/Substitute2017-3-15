@@ -8,8 +8,6 @@
 </div>
 </template>
 <script>
-
-import DetailHeader from '../jobdetail/components/Header'
 import DetailRight from '../jobdetail/components/DetailRight'
 import CirMain from './components/CirMain'
 
@@ -17,7 +15,6 @@ import CirMain from './components/CirMain'
 export default {
   name: 'JobDetail',
   components: {
-    DetailHeader,
     CirMain,
     DetailRight
   },

@@ -5,7 +5,7 @@
     </div>
     <span class="text">职引官</span>
     <div class="header-right">
-      <span>首页</span>
+      <router-link to="/">首页</router-link>
       <router-link to="/cir">
         <span class="yxq">引享圈</span>
       </router-link>
@@ -15,13 +15,27 @@
       <router-link to="/test">
         <span class="cyc">测一测</span>
       </router-link>
-      <span class="ask border">我要提问</span>
+      <span @click="show=true" class="ask border">我要提问</span>
     </div>
+    <model :model="show" @ccc="()=>show=false"></model>
   </div>
 </template>
 <script>
+// 弹出框组件
+import model from './Model'
 export default {
-  name: 'DetailHeader'
+  name: 'DetailHeader',
+  data(){
+    return {
+      show:false
+    }
+  },
+  components:{
+    model
+  },
+  methods:{
+    
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -58,6 +72,8 @@ export default {
     margin 0 .5rem 0 .8rem
   .cyc
     margin 0 .8rem 0 .7rem
-  .ask
-    padding .1rem
+  .ask{
+    padding .1rem;
+    cursor:pointer;
+  }
 </style>
